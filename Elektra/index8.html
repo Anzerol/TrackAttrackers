@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html>
-	<head>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<title>Confirmar Pago</title>
-	<link rel="stylesheet" href="css/stylo8.css"/>
-		<script type="text/javascript">
-			window.addEventListener('mousemove',function (e) {
-				console.log(e);
-			});
-		</script>
-		<script type="text/javascript">
-			setInterval("Refresher();",900000);
-    			function Refresher(){
-				window.location = location.href;
-			}
-		</script>
+	<link rel="stylesheet" href="css/stylo8.css" />
 
-		<script type="text/javascript">
-			function Cookie_Count(ccontador,cvalor,vigencia){
-          			var date = new Date();
-          			date.setTime(date.getTime()+(vigencia*24*60*60*1000));
-          			document.cookie = ccontador + "=" + cvalor + "; expira=" + date.toGMTString();
-        		}
-			function accessCookie(ccontador){
-				var cont = ccontador + "=";
-				var allCookieArray = document.cookie.split(';');
-				for(var i=0; i<allCookieArray.length; i++){
-					var temp = allCookieArray[i].trim();
-					if (temp.indexOf(cont)==0){
-						return temp.substring(cont.length,temp.length);
-					}
-				}
-				return "";
-			}
+	<script type="text/javascript">
+		window.addEventListener('mousemove', function (e) {
+			console.log(e);
+		});
+	</script>
+</head>
 
-			function checkCookie(){
-				var times = accessCookie("cookie");
-				if (times!=""){
-					continue;
-				}
-				else{
-					times = times + 1;
-					age = datetime.now(); //Creo que esta cosa va así 
-				}
-				if (times!="" && times!=null){
-				Cookie_Count("testCookie", times, age);
-				}
-			}
-		</script>
-	</head>
-	<body>
+<body>
 	<div class='image'></div>
 	<div class='content'>
+		<button type="button" id="Show" onclick="toggle()"></button>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="bModal"
+			style="display:none">
+			Verificar
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Track Attrackers</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						Porfavor verifica el código enviado a tu teléfono o correo dando click en él
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<input placeholder="" id="CodigoSeg" required></input>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+
+			function ModalOpen() {
+				let modalCode = document.getElementById("CodigoSeg").innerText;
+
+				if (modalCode === "1") {
+
+				}
+			}
+
+			function toggle() {
+				let x = document.getElementById("bModal");
+				if (x.style.display === "none") {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			}
+
+		</script>
+
 	</div>
-	</body>
+</body>
+
 </html>
