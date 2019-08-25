@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Confirmar Pago</title>
+	<link rel="stylesheet" href="css/stylo8.css"/>
+		<script type="text/javascript">
+			window.addEventListener('mousemove',function (e) {
+				console.log(e);
+			});
+		</script>
+		<script type="text/javascript">
+			setInterval("Refresher();",900000);
+    			function Refresher(){
+				window.location = location.href;
+			}
+		</script>
+
+		<script type="text/javascript">
+			function Cookie_Count(ccontador,cvalor,vigencia){
+          			var date = new Date();
+          			date.setTime(date.getTime()+(vigencia*24*60*60*1000));
+          			document.cookie = ccontador + "=" + cvalor + "; expira=" + date.toGMTString();
+        		}
+			function accessCookie(ccontador){
+				var cont = ccontador + "=";
+				var allCookieArray = document.cookie.split(';');
+				for(var i=0; i<allCookieArray.length; i++){
+					var temp = allCookieArray[i].trim();
+					if (temp.indexOf(cont)==0){
+						return temp.substring(cont.length,temp.length);
+					}
+				}
+				return "";
+			}
+
+			function checkCookie(){
+				var times = accessCookie("cookie");
+				if (times!=""){
+					continue;
+				}
+				else{
+					times = times + 1;
+					age = datetime.now(); //Creo que esta cosa va así 
+				}
+				if (times!="" && times!=null){
+				Cookie_Count("testCookie", times, age);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<div class='image'></div>
+	<div class='content'>
+	</div>
+	</body>
+</html>
